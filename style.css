@@ -108,6 +108,12 @@ h1 {
     margin: 2.5% 0;
     align-items: center;
 }
+#ques {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .opt{
     padding: 2% 0;
     text-align: left;
