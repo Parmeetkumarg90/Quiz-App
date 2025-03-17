@@ -108,10 +108,9 @@ h1 {
     margin: 2.5% 0;
     align-items: center;
 }
-#ques {
+.ques>label{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-content: center;
     flex-wrap: wrap;
 }
 .opt{
@@ -142,7 +141,7 @@ h1 {
         grid-template-rows: repeat(2,0.5fr);
     }
     .opt{
-        padding: 0 10%;
+        padding: 0 20%;
         font-size: 1.5vmax;
     }
 }
