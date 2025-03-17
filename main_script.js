@@ -29,31 +29,29 @@ function addQues() {
         select: 'Not Answered'
     });
     document.querySelectorAll('.box')[0].innerHTML = `
-        <section class="box">
-            <div id="timeBox">
-                <div class="time">
-                    <h1 class="time">Total Time</h1>
-                    <h1 class="time">00 : 00</h1>
-                </div>
-                <div class="time">
-                    <h1 class="time">Question Time</h1>
-                    <h1 class="time">00 : 00</h1>
-                </div>
-                </div>
-                <div id="quesBox">
-                    <h1 class="ques"><span>Ques ${new_index + 1} :</span>${quizQues[index].question}</h1>
-                <div class="ques">
-                    <label for="option1"><h1 class="opt"><input type="radio" id="option1" value="1" name="option"> ${quizQues[index].options[0]}</h1></label>
-                    <label for="option2"><h1 class="opt"><input type="radio" id="option2" value="2" name="option">${quizQues[index].options[1]}</h1></label>
-                    <label for="option3"><h1 class="opt"><input type="radio" id="option3" value="3" name="option"> ${quizQues[index].options[2]}</h1></label>
-                    <label for="option4"><h1 class="opt"><input type="radio" id="option4" value="4" name="option"> ${quizQues[index].options[3]}</h1></label>
-                </div>
+        <div id="timeBox">
+            <div class="time">
+                <h1 class="time">Total Time</h1>
+                <h1 class="time">00 : 00</h1>
             </div>
-            <div class="buttons">
-                <button id="submit">Submit</button>
-                <button id="next">Next</button>
+            <div class="time">
+                <h1 class="time">Question Time</h1>
+                <h1 class="time">00 : 00</h1>
             </div>
-        </section>`;
+            </div>
+            <div id="quesBox">
+                <h1 class="ques"><span>Ques ${new_index + 1} :</span>${quizQues[index].question}</h1>
+            <div class="ques">
+                <label for="option1"><h1 class="opt"><input type="radio" id="option1" value="1" name="option"> ${quizQues[index].options[0]}</h1></label>
+                <label for="option2"><h1 class="opt"><input type="radio" id="option2" value="2" name="option">${quizQues[index].options[1]}</h1></label>
+                <label for="option3"><h1 class="opt"><input type="radio" id="option3" value="3" name="option"> ${quizQues[index].options[2]}</h1></label>
+                <label for="option4"><h1 class="opt"><input type="radio" id="option4" value="4" name="option"> ${quizQues[index].options[3]}</h1></label>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="submit">Submit</button>
+            <button id="next">Next</button>
+        </div>`;
     index++;
     changeColor();
     timeInterval();
@@ -70,7 +68,6 @@ function report() {
     // console.log(askQues)
     document.querySelectorAll('.box')[0].innerHTML = ""
     document.querySelectorAll('.box')[0].innerHTML = `
-    <section class="box">
         <h1>Overall Report of your knowledge</h1>
         <ul>
             <li>Total Questions : 20</li>
@@ -80,7 +77,6 @@ function report() {
         </ul>
         <h1>Better Luck Next Time</h1>
         <button id="startButton">Start</button>
-    </section>
     `;
     let table = document.createElement('table');
     table.setAttribute("style", "width: 100%; border-collapse: collapse; margin-top: 2vmax; margin-bottom:5vmax;");
@@ -92,19 +88,25 @@ function report() {
     th1.style.padding = ".5vmax";
     th1.style.textAlign = "left";
     let th2 = document.createElement('th');
-    th2.innerText = "Correct Answer";
+    th2.innerText = "Options";
     th2.style.border = "1px solid royalblue";
     th2.style.padding = ".5vmax";
     th2.style.textAlign = "left";
     let th3 = document.createElement('th');
-    th3.innerText = "Your Answer";
+    th3.innerText = "Correct Answer";
     th3.style.border = "1px solid royalblue";
     th3.style.padding = ".5vmax";
     th3.style.textAlign = "left";
+    let th4 = document.createElement('th');
+    th4.innerText = "Your Answer";
+    th4.style.border = "1px solid royalblue";
+    th4.style.padding = ".5vmax";
+    th4.style.textAlign = "left";
 
     trhead.appendChild(th1);
     trhead.appendChild(th2);
     trhead.appendChild(th3);
+    trhead.appendChild(th4);
     table.appendChild(trhead);
     askQues.forEach((quiz,index) => {
         let trrow = document.createElement('tr');
@@ -113,8 +115,13 @@ function report() {
         quescell.style.border = "1px solid royalblue";
         quescell.style.padding = ".5vmax";
 
+        let optcell = document.createElement('td');
+        optcell.innerText = quiz.options.map((option, index) => `${index + 1}.) ${option}`).join("\n");
+        optcell.style.border = "1px solid royalblue";
+        optcell.style.padding = ".5vmax";
+
         let anscell = document.createElement('td');
-        anscell.innerText = quiz.options.map((option, index) => `${index + 1}.) ${option}`).join("\n");
+        anscell.innerText = quiz.answer;
         anscell.style.border = "1px solid royalblue";
         anscell.style.padding = ".5vmax";
 
@@ -124,6 +131,7 @@ function report() {
         usercell.style.padding = ".5vmax";
 
         trrow.appendChild(quescell);
+        trrow.appendChild(optcell);
         trrow.appendChild(anscell);
         trrow.appendChild(usercell);
         table.appendChild(trrow);
