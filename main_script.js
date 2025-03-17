@@ -41,7 +41,7 @@ function addQues() {
             </div>
             <div id="quesBox">
                 <h1 class="ques"><span>Ques ${new_index + 1} :</span>${quizQues[index].question}</h1>
-            <div class="ques">
+            <div id="ques" class="ques">
                 <label for="option1"><h1 class="opt"><input type="radio" id="option1" value="1" name="option"> ${quizQues[index].options[0]}</h1></label>
                 <label for="option2"><h1 class="opt"><input type="radio" id="option2" value="2" name="option">${quizQues[index].options[1]}</h1></label>
                 <label for="option3"><h1 class="opt"><input type="radio" id="option3" value="3" name="option"> ${quizQues[index].options[2]}</h1></label>
