@@ -77,8 +77,10 @@ function report() {
         </ul>
         <h1>Better Luck Next Time</h1>
         <button id="startButton">Start</button>
-        <div style="overflow-x: auto; width: 100%;">
     `;
+    let div = document.createElement('div');    
+    div.setAttribute("style", "overflow-x: auto; width: 100%;");
+    
     let table = document.createElement('table');
     table.setAttribute("style", "width: 100%; border-collapse: collapse; margin-top: 2vmax; margin-bottom:5vmax;");
 
@@ -137,8 +139,8 @@ function report() {
         trrow.appendChild(usercell);
         table.appendChild(trrow);
     });
-    document.querySelectorAll('.box')[0].appendChild(table);    
-    document.querySelectorAll('.box')[0].innerHTML += "</div>";
+    div.appendChild(table);
+    document.querySelectorAll('.box')[0].appendChild(div);    
     startButton = document.querySelector('#startButton');
     start(startButton);
 }
