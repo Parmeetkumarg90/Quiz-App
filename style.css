@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s all;
+    font-size: 2vmax;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ced8ce;
+    user-select: none;
+}
+
+header,
+footer {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 2% 0;
+}
+
+footer {
+    background-color: rgb(27, 23, 23);
+    position: static;
+    bottom: 0;
+}
+
+main {
+    width: 100%;
+}
+
+.box {
+    margin: 2.5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 0.1fr);
+}
+.box>ul {
+    text-wrap-style: stable;
+    /* padding: 5%; */
+    padding-left: 5%;
+    font-size: 1.5vmax;
+    margin: 2.5% 0;
+}
+
+.box>ul>li {
+    padding-bottom: 1%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.box>h1, .box .time {
+    margin: 1% 0;
+    background: linear-gradient(90deg, #66f315, #034583);
+    /* background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    color: #ced8ce;
+    border-radius: 50px;
+    font-size: 2.5vmax;
+}
+.box .time{
+    margin: 1%;
+}
+#timeBox>.time{
+    width: 50%;
+}
+#timeBox{
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#startButton,#submit,#next{
+    width: 40%;
+    padding: 2%;
+    margin: 1% 0 1% 30%;
+    border-radius: 50px;
+    color: #ced8ce;
+    background: linear-gradient(90deg, #66f315, #034583);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#submit,#next{
+    width: 30%;
+    margin: 0;
+    padding: 2%;
+}
+#startButton:hover,#submit:hover,#next:hover{
+    background: linear-gradient(90deg, #5181ad, #90c074);    
+}
+#quesBox{
+    display: grid;
+    grid-template-columns: repeat(2,0.5fr);
+    grid-template-rows: 1fr;
+    margin: 2.5% 0;
+    align-items: center;
+}
+.opt{
+    padding: 2% 0;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: 20%;
+}
+.selected{
+    background: #4CAF50;
+}
+.ques{
+    margin: 2.5% 0;
+}
+@media screen and (max-width:500px) {
+    .box>ul {
+        padding-left: 10%;
+    }
+    main{ 
+        margin-bottom: 50%;
+        margin-bottom: calc(5vmax + 5%);
+    }
+    .box>ul>li {
+        padding-bottom: 5%;
+    }
+    #quesBox{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,0.5fr);
+    }
+    .opt{
+        padding: 0 10%;
+        font-size: 1.5vmax;
+    }
+}
+@media screen and (max-width:900px) {
+    footer{
+        position: fixed;
+    }
+}
