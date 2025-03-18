@@ -112,7 +112,7 @@ function report() {
         anscell.style.padding = ".5vmax";
 
         let usercell = document.createElement('td');
-        usercell.innerText = quiz.select === 'Not Answered' ? quiz.select : quiz.select + 1 + ".) " + " " + quiz.options[quiz.select];
+        usercell.innerText = quiz.select === 'Not Answered' ?  quiz.select : quiz.options.map((option, index) => option === quiz.select ? index + 1 + ".) " + quiz.select : "").join('');
         usercell.style.border = "1px solid royalblue";
         usercell.style.padding = ".5vmax";
 
