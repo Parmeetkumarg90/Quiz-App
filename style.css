@@ -82,7 +82,7 @@ h1 {
     flex-direction: row;
     justify-content: space-evenly;
 }
-#startButton,#submit,#next{
+.startButton,#submit,#next{
     width: 40%;
     padding: 2%;
     margin: 1% 0 1% 30%;
@@ -98,7 +98,7 @@ h1 {
     margin: 0;
     padding: 2%;
 }
-#startButton:hover,#submit:hover,#next:hover{
+.startButton:hover,#submit:hover,#next:hover{
     background: linear-gradient(90deg, #5181ad, #90c074);    
 }
 #quesBox{
@@ -114,7 +114,7 @@ h1 {
     flex-wrap: wrap;
 }
 .opt{
-    padding: 2% 0;
+    padding: 2% 10%;
     text-align: left;
     border-radius: 50px;
     margin-left: 20%;
