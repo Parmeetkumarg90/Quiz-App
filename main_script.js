@@ -1,7 +1,6 @@
 document.querySelectorAll('.box')[1].style.display = 'none';
 document.querySelectorAll('.box')[2].style.display = 'none';
-
-let index, totalAtempt, totalCorrect, time1, time2, new_index, overallsec, overallmin;
+let table  = document.createElement('table'), index, totalAtempt, totalCorrect, time1, time2, new_index, overallsec, overallmin;
 const askQues = [], random = [];
 let startButton = document.querySelectorAll('.startButton')[0];
 function start(startButton) {
@@ -10,7 +9,7 @@ function start(startButton) {
             document.querySelectorAll('.box')[0].style.display = 'none';
             document.querySelectorAll('.box')[1].style.display = 'grid';
             document.querySelectorAll('.box')[2].style.display = 'none';
-            index = 0, totalAtempt = 0, totalCorrect = 0, new_index = 0, askQues.length = 0, overallsec = 0, overallmin = 2;
+            index = 0, totalAtempt = 0, totalCorrect = 0, new_index = 0, askQues.length = 0, overallsec = 0, overallmin = 2,table.innerHTML = "";
             randQues();
             addQues();
         }
@@ -64,7 +63,7 @@ function report() {
     let div = document.createElement('div');    
     div.setAttribute("style", "overflow-x: auto; width: 100%;");
     
-    let table = document.createElement('table');
+    // table = document.createElement('table');
     table.setAttribute("style", "width: 100%; border-collapse: collapse; margin-top: 2vmax; margin-bottom:5vmax;");
 
     let trhead = document.createElement('tr');
