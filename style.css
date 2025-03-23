@@ -34,6 +34,7 @@ footer {
 
 main {
     width: 100%;
+    min-height: 100vh; /* new */
 }
 
 .box {
@@ -130,8 +131,8 @@ h1 {
         padding-left: 10%;
     }
     main{ 
-        margin-bottom: 50%;
-        margin-bottom: calc(5vmax + 5%);
+   /*     margin-bottom: 50%;
+        margin-bottom: calc(5vmax + 5%);*/
     }
     .box>ul>li {
         padding-bottom: 5%;
