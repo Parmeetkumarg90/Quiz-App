@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     transition: 0.5s all;
-    font-size: 2vmax;
+    font-size: 2.5vmax;
 }
 
 body::-webkit-scrollbar {
@@ -34,7 +34,6 @@ footer {
 
 main {
     width: 100%;
-    min-height: 100vh; /* new */
 }
 
 .box {
@@ -131,8 +130,14 @@ h1 {
         padding-left: 10%;
     }
     main{ 
-   /*     margin-bottom: 50%;
-        margin-bottom: calc(5vmax + 5%);*/
+        margin-bottom: 50%;
+        margin-bottom: calc(5vmax + 5%);
+    }
+    #timeBox{
+        flex-direction: column;
+    }
+    #timeBox>.time{
+        width: 100%;
     }
     .box>ul>li {
         padding-bottom: 5%;
@@ -142,8 +147,10 @@ h1 {
         grid-template-rows: repeat(2,0.5fr);
     }
     .opt{
-        padding: 0 20%;
-        font-size: 1.5vmax;
+        font-size: 2vmax;
+        font-weight: bolder;
+        padding: 5% 20%;
+        font-size: 2vmax;
     }
 }
 @media screen and (max-width:900px) {
